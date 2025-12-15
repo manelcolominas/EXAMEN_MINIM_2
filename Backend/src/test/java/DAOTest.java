@@ -19,7 +19,6 @@ public class DAOTest {
     PlayerDAO _players;
     UserItemDAO _inventory;
     FaqDAO _faqs;
-    GameDAO _games;
 
     @Before
     public void Init()
@@ -29,7 +28,6 @@ public class DAOTest {
         _players = PlayerDAO.getInstance();
         _inventory = UserItemDAO.getInstance();
         _faqs = FaqDAO.getInstance();
-        _games = GameDAO.getInstance();
     }
     @After
     public void Finalize()
@@ -178,36 +176,7 @@ public class DAOTest {
 
     @Test
     public void testFaq() throws SQLException {
-        Faq faq = _faqs.get(4);
+        Faq faq = _faqs.getFaq(4);
         log.info(faq.toString());
-    }
-
-    @Test
-    public void testFaqs() throws SQLException {
-        List<Faq> faqs = _faqs.getAll();
-        for(Faq faq : faqs) log.info(faq.toString());
-    }
-
-    @Test
-    public void testQuery()
-    {
-        String query = QueryHelper.createSELECTLast(User.class);
-        log.info(query);
-    }
-    @Test
-    public void testCore() throws Exception
-    {
-        User user = new User("Maria1","Maria Perez","maria@gmail.com","123456Ab");
-        int userId = _users.registerUser(user);
-        int playerId = _players.addPlayer(userId);
-        int gameId = _games.add(userId,playerId);
-
-    }
-
-    @Test
-    public void testGame() throws Exception
-    {
-        int playerId = ((Game)_games.getbyUserId(6)).getId();
-        log.info(playerId);
     }
 }

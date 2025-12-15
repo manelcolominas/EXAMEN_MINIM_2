@@ -22,7 +22,7 @@ public class EETACBROSMannagerSystemService {
 
     public EETACBROSMannagerSystemService() {
         // Use the singleton instance
-        this.sistema = EBDBManagerSystem.getInstance();
+        this.sistema = EETACBROSMannagerSystemImpl.getInstance();
 
     }
 

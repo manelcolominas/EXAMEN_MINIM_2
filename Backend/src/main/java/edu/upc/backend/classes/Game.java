@@ -2,31 +2,33 @@ package edu.upc.backend.classes;
 
 public class Game {
 
-    private int id;
+
 
     public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public int getLevel() {
-        return level;
+    public int getScore() {
+        return score;
     }
 
-    public void setLevel(Integer level) {
-        this.level = level;
+    public void setScore(Integer score) {
+        this.score = score;
     }
 
-    private int level;
 
-    public Game() {}
-    public Game(int id, int level)
+
+    int id;
+    int score;
+
+    public Game(){}
+    public Game(int id , int score)
     {
         setId(id);
-        setLevel(level);
+        setScore(score);
     }
-
 }
