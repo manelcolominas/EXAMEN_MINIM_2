@@ -1,0 +1,39 @@
+package dsa.upc.edu.listapp.github;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class BuyRequest {
+    private int userId;
+    private List<Item> items;
+
+    public BuyRequest(int userId, List<Item> items) {
+        this.userId = userId;
+        this.items = items;
+    }
+
+    public BuyRequest(){
+        this.items = new ArrayList<>();
+    }
+
+    public BuyRequest(int userId) {
+        this.userId = userId;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
+    }
+
+}
