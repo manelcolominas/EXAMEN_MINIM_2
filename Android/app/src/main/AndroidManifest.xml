@@ -33,6 +33,8 @@
         <activity android:name=".ShopActivity"/>
 
         <activity android:name=".YouTubeActivity"/>
+
+        <activity android:name=".RankingActivity"/>
     </application>
 
 </manifest>

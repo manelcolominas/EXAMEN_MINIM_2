@@ -6,11 +6,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class API {
-
-    //final static String URL = "http://10.0.2.2:8080/swagger/";
     final static String URL = "http://10.0.2.2:8080/example/";
-
-    //final static String URL = "http://192.168.10.24/example/";
     //final static String URL = "http://dsa3.upc.edu/example/";
 
 

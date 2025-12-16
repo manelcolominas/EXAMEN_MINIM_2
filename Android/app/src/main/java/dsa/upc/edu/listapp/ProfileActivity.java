@@ -26,11 +26,11 @@ public class ProfileActivity extends AppCompatActivity {
     private EETACBROSSystemService api;
     private SharedPreferences prefs;
 
-    private Button gamesBtn,settingsBtn, logoutBtn, shopBtn, youtubBtn;
+    private Button gamesBtn,settingsBtn, logoutBtn, shopBtn, youtubBtn, rankingBtn;
 
     private TextView usernameTextView, coinsTextView;
     private RecyclerView inventoryRecycler;
-    private MyAdapter mAdapter;
+    private MyAdapterUserItems mAdapter;
     private RecyclerView.LayoutManager layoutManager;
 
     private List<Item> userItems = new ArrayList<>();
@@ -52,6 +52,8 @@ public class ProfileActivity extends AppCompatActivity {
 
         youtubBtn = findViewById(R.id.youtubeBtn);
 
+        rankingBtn = findViewById(R.id.rankingBtn);
+
 
 
         inventoryRecycler = findViewById(R.id.inventoryRecycler);
@@ -64,7 +66,7 @@ public class ProfileActivity extends AppCompatActivity {
             inventoryRecycler.setHasFixedSize(true);
             layoutManager = new GridLayoutManager(this, 3);
             inventoryRecycler.setLayoutManager(layoutManager);
-            mAdapter = new MyAdapter();
+            mAdapter = new MyAdapterUserItems();
             inventoryRecycler.setAdapter(mAdapter);
         }
 
@@ -90,6 +92,12 @@ public class ProfileActivity extends AppCompatActivity {
         if (youtubBtn != null) {
             youtubBtn.setOnClickListener(v -> {
                 Intent intent = new Intent(ProfileActivity.this, YouTubeActivity.class);
+                startActivity(intent);
+            });
+        }
+        if (rankingBtn != null) {
+            rankingBtn.setOnClickListener(v -> {
+                Intent intent = new Intent(ProfileActivity.this, RankingActivity.class);
                 startActivity(intent);
             });
         }

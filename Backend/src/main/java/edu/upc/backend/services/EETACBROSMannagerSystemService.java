@@ -218,4 +218,21 @@ public class EETACBROSMannagerSystemService {
         }
     }
 
+    // EXAMEN_MINIM_2
+    // TORNAR LLISTA D'USUARIS;
+    @GET
+    @ApiOperation(value = "Consulta el ranking d'equips", notes = "Mostra tots els equips ordenats per punts")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Teams found.", response = Team.class, responseContainer = "List"),
+            @ApiResponse(code = 404, message = "No teams found.")
+    })
+    @Path("teams/ranking")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response showRankingTeams() {
+        logger.info("Ranking teams requested");
+        List<Team> teams = this.sistema.getTeamsRanking();
+        GenericEntity<List<Team>> entity = new GenericEntity<List<Team>>(teams) {};
+        logger.info("Ranking teams sent");
+        return Response.ok(entity).build();
+    }
 }

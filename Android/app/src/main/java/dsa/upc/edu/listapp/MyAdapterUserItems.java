@@ -10,7 +10,7 @@ import java.util.List;
 
 import dsa.upc.edu.listapp.github.Item;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class MyAdapterUserItems extends RecyclerView.Adapter<MyAdapterUserItems.ViewHolder> {
     private List<Item> values;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -33,16 +33,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         notifyDataSetChanged();
     }
 
-    public MyAdapter() {
+    public MyAdapterUserItems() {
         values = null;
     }
 
-    public MyAdapter(List<Item> myDataset) {
+    public MyAdapterUserItems(List<Item> myDataset) {
         values = myDataset;
     }
 
     @Override
-    public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MyAdapterUserItems.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View v = inflater.inflate(R.layout.item_inventory, parent, false);
         ViewHolder vh = new ViewHolder(v);

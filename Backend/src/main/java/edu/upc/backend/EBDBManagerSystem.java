@@ -254,4 +254,8 @@ public class EBDBManagerSystem implements EETACBROSMannagerSystem {
     public void clear() {
 
     }
+
+    public List<Team> getTeamsRanking() {
+        return null;
+    }
 }

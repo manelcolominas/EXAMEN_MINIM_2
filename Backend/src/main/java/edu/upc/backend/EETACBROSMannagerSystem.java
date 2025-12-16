@@ -36,4 +36,6 @@ public interface EETACBROSMannagerSystem {
     public Game findGame(int playerId);
     public void updateGame(Game game);
     public void removeGame(int playerId);
+
+    List<Team> getTeamsRanking();
 }

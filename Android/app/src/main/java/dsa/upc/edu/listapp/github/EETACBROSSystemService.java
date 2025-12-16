@@ -32,9 +32,9 @@ public interface EETACBROSSystemService {
     @DELETE("eetacbros/user/delete/{id}")
     Call<Void> deleteUser(@Path("id") int id);
 
-    @GET("videos?part=snippet")
-    Call<VideoResponse> getVideos(@Query("id") String videoIds, @Query("key") String apiKey);
-
     @GET("search?part=snippet&type=video")
     Call<SearchListResponse> searchVideos(@Query("key") String apiKey, @Query("q") String query, @Query("pageToken") String pageToken, @Query("videoCategoryId") String categoryId);
+
+    @GET("eetacbros/teams/ranking")
+    Call<List<Team>> getTeamsRanking();
 }
